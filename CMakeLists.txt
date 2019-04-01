@@ -4,6 +4,7 @@ project(QtPlayground)
 # Find all sources and headers
 file(GLOB_RECURSE HEADER_FILES_DIR ${CMAKE_SOURCE_DIR}/src/*.h)
 file(GLOB_RECURSE SOURCE_FILES_DIR ${CMAKE_SOURCE_DIR}/src/*.cpp)
+file(GLOB_RECURSE UI_FILES ${CMAKE_SOURCE_DIR}/src/*.ui)
 
 # Tell CMake to run moc when necessary:
 set(CMAKE_AUTOMOC ON)
@@ -26,7 +27,7 @@ add_definitions(${Qt5Widgets_DEFINITIONS})
 # without -fPIE. We add that here.
 set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
-add_executable(Runner ${SOURCE_FILES_DIR} ${HEADER_FILES_DIR})
+add_executable(Runner ${SOURCE_FILES_DIR} ${HEADER_FILES_DIR} ${UI_FILES})
 
 # The Qt5Widgets_LIBRARIES variable also includes QtGui and QtCore
 target_link_libraries(Runner ${Qt5Widgets_LIBRARIES})
