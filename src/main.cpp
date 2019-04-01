@@ -11,7 +11,8 @@ int main(int argc, char** argv)
 
     QApplication application(argc, argv);
 
-    MainController mainController;
+    MainController mainController(&application);
+    int applicationExitCode = mainController.runApplication();
 
-    return EXIT_SUCCESS;
+    return applicationExitCode;
 }
