@@ -1,0 +1,2 @@
+#Ignore the CMakeLists.txt.user file (it is project specific)
+CMakeLists.txt.user
